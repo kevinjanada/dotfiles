@@ -132,6 +132,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$PATH:/Users/kevin/go/bin"
 export PATH="$PATH:/Applications/kitty.app/Contents/MacOS"
 export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:/Users/kevin/Library/Python/3.11/bin"
+export PATH="$PATH:/Users/kevin/google-cloud-sdk/bin"
 
 # export has to be like this if using powerlevel10k theme
 export GPG_TTY=$TTY
@@ -140,3 +142,9 @@ export GPG_TTY=$TTY
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 nvm use default
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kevin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kevin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kevin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kevin/google-cloud-sdk/completion.zsh.inc'; fi
