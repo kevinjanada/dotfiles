@@ -11,49 +11,53 @@
 
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/submap",
-        "sway/scratchpad",
-        "custom/media"
     ],
     "modules-center": [
-        "sway/window",
-        "hyprland/workspaces",
+      "hyprland/workspaces",
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
-        "clock",
-        "tray",
-        "custom/power"
+      "bluetooth",
+      "network",
+      "group/resources",
+      "clock"
     ],
+    // "modules-right": [
+    //     "mpd",
+    //     "idle_inhibitor",
+    //     "pulseaudio",
+    //     "network",
+    //     "power-profiles-daemon",
+    //     "cpu",
+    //     "memory",
+    //     "temperature",
+    //     "backlight",
+    //     "keyboard-state",
+    //     "sway/language",
+    //     "battery",
+    //     "battery#bat2",
+    //     "clock",
+    //     "tray",
+    //     "custom/power"
+    // ],
+
+
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "clock": {
+        "format": "{:%I:%M:%S %p} ",
+        "interval": 1,   
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "weekdays": "<span color='#ffffff'><b>{}</b></span>",
+                "days": "<span color='#a19f9c'>{}</span>",
+                "today": "<span color='#ffffff'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "shift_down",
+            "on-click": "shift_up"
+        }
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -114,17 +118,42 @@
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+    // "cpu": {
+    //     "format": "{usage}% ",
+    //     "tooltip": false
+    // },
+    // "memory": {
+    //     "format": "{}% "
+    // },
+    "group/resources": {
+      "orientation": "horizontal",
+      "modules": [
+        "cpu",
+        "memory"
+      ]
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "{usage}% 󰻠",
+        "tooltip": true
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
+    },
+    "group/expand": {
+      "orientation": "horizontal",
+      "drawer": {
+        "transition-duration": 600,
+        "transition-to-left": true,
+        "click-to-reveal": true
+      },
+      "modules": [
+        // "custom/expand",
+        // "custom/colorpicker",
+        "cpu",
+        "memory"
+        // "temperature",
+        // "custom/endpoint"
+      ],
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -168,14 +197,35 @@
         "power-saver": ""
       }
     },
+    // "network": {
+    //     // "interface": "wlp2*", // (Optional) To force the use of this interface
+    //     "format-wifi": "{essid} ({signalStrength}%) ",
+    //     "format-ethernet": "{ipaddr}/{cidr} 󱘖",
+    //     "tooltip-format": "{ifname} via {gwaddr} ",
+    //     "format-linked": "{ifname} (No IP) ",
+    //     "format-disconnected": "Disconnected ⚠",
+    //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    // },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󱘖",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "",
+        "format-ethernet":"",
+        "format-disconnected": "",
+        "tooltip-format-disconnected": "Error",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} 🖧 ",
+        "on-click": "kitty nmtui"
+    },
+    "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "BT-off",
+        "format-disabled": "󰂲",
+        "format-connected-battery": "{device_battery_percentage}% 󰂯",
+        "format-alt": "{device_alias} 󰂯",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+        "on-click-right": "blueman-manager",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
