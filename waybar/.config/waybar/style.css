@@ -35,6 +35,10 @@ tooltip {
     color: @color7;
 }
 
+#taskbar button.active {
+  background-color: alpha(@color9, .4);
+}
+
 #workspaces {
     padding: 0px 5px;
 }
