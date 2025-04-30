@@ -17,6 +17,7 @@
       "hyprland/workspaces",
     ],
     "modules-right": [
+      "pulseaudio",
       "bluetooth",
       "network",
       "group/resources",
@@ -249,7 +250,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "max-volume": 100,
     },
     "custom/media": {
         "format": "{icon} {text}",

@@ -22,5 +22,6 @@ main() {
   source ~/.cache/wal/colors.sh && cp -r $wallpaper ~/wallpapers/pywallpaper.jpg
   ~/.config/hypr/chromium-wal.sh
   ~/.config/waybar/launch.sh
+  ~/.config/swayosd/launch.sh
 }
 main
