@@ -162,9 +162,12 @@ source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 [ -s "/Users/kevin/.bun/_bun" ] && source "/Users/kevin/.bun/_bun"
 
 # pyenv
-# echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-# echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-# echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+bindkey -v
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+eval "$(~/.local/bin/mise activate)"
