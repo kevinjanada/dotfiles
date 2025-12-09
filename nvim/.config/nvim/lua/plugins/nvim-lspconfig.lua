@@ -12,6 +12,10 @@ return {
       tailwindcss = {
         filetypes_include = { "templ", "html" },
       },
+      gdscript = {
+        filetypes_include = { "gd", "gdscript", "gdscript3" },
+        root_markers = { "project.godot", ".git" },
+      },
     },
   },
 }

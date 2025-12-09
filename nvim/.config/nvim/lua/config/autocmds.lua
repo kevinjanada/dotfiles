@@ -5,10 +5,30 @@
 vim.filetype.add({
   extension = { templ = "templ" },
 })
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "templ" },
   callback = function()
     ---@diagnostic disable-next-line: inject-field
     vim.b.autoformat = false
+  end,
+})
+
+-- Set tab settings specifically for Python files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "gd", "gdscript", "gdscript3" },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
   end,
 })
