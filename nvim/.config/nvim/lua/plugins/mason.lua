@@ -5,6 +5,7 @@ return {
       "templ",
       "htmx-lsp",
       "html-lsp",
+      "clangd",
     },
   },
   config = function()
