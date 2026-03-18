@@ -98,3 +98,47 @@ tooltip {
   padding-right: 24px;
 }
 
+/* PS4 Controller Waybar Module Styling */
+/* Add this to your waybar style.css or use standalone */
+
+#custom-ps4-controller {
+    padding: 0px 8px;
+    transition: all 0.3s ease;
+}
+
+#custom-ps4-controller:hover {
+    color: @color9;
+}
+
+#custom-ps4-controller.connected-xbox {
+    color: @color11;
+}
+
+#custom-ps4-controller.connected-xbox:hover {
+    color: @color10;
+}
+
+#custom-ps4-controller.connected {
+    color: @color9;
+}
+
+#custom-ps4-controller.waiting {
+    color: @color3;
+    animation: pulse 2s infinite;
+}
+
+#custom-ps4-controller.disconnected {
+    color: @color7;
+    opacity: 0.6;
+}
+
+#custom-ps4-controller.bluetooth-off {
+    color: @color1;
+    opacity: 0.5;
+}
+
+#custom-ps4-controller.waiting {
+    color: @color3;
+}
+
+
