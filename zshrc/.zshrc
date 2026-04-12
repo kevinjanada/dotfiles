@@ -134,6 +134,10 @@ export PATH="$PATH:/Applications/kitty.app/Contents/MacOS"
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/Users/kevin/Library/Python/3.11/bin"
 export PATH="$PATH:/Users/kevin/google-cloud-sdk/bin"
+export PATH="$PATH:/opt/local/bin"
+export PATH="$PATH:/Applications/Godot.app/Contents/MacOS"
+
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/Library/Frameworks/GStreamer.framework/Versions/1.0/lib/pkgconfig"
 
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
@@ -171,3 +175,9 @@ bindkey -v
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 eval "$(~/.local/bin/mise activate)"
+
+export TERM=xterm-256color
+export RUBYOPT="-r$HOME/.rubyopenssl_default_store.rb $RUBYOPT"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+export PATH="$PATH:/Users/kevin/.dotnet/tools"

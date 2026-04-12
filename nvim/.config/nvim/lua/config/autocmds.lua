@@ -2,17 +2,17 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-vim.filetype.add({
-  extension = { templ = "templ" },
-})
-
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "templ" },
-  callback = function()
-    ---@diagnostic disable-next-line: inject-field
-    vim.b.autoformat = false
-  end,
-})
+-- vim.filetype.add({
+--   extension = { templ = "templ" },
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "templ" },
+--   callback = function()
+--     ---@diagnostic disable-next-line: inject-field
+--     vim.b.autoformat = false
+--   end,
+-- })
 
 -- Set tab settings specifically for Python files
 vim.api.nvim_create_autocmd("FileType", {

@@ -8,7 +8,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     opts = {
-      worspaces = {
+      workspaces = {
         {
           name = "obsidian",
           path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian",
