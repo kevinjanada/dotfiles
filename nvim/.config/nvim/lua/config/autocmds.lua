@@ -14,6 +14,12 @@
 --   end,
 -- })
 
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
+})
+
 -- Set tab settings specifically for Python files
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
