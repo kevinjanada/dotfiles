@@ -181,3 +181,5 @@ export RUBYOPT="-r$HOME/.rubyopenssl_default_store.rb $RUBYOPT"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 export PATH="$PATH:/Users/kevin/.dotnet/tools"
+export PATH="/Users/kevin/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/kevin/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

@@ -16,6 +16,11 @@ return {
         filetypes_include = { "gd", "gdscript", "gdscript3" },
         root_markers = { "project.godot", ".git" },
       },
+      svelte = {
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+        end,
+      },
     },
   },
 }
