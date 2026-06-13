@@ -18,6 +18,7 @@ return {
           path = workspaces_path,
         },
       },
+      ui = { enable = false },
     },
   },
 }
