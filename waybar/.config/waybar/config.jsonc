@@ -278,7 +278,7 @@
       ]
     },
     "on-click": "pavucontrol",
-    "max-volume": 100,
+    "max-volume": 100
   },
   "custom/media": {
     "format": "{icon} {text}",
